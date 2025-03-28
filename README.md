@@ -18,12 +18,16 @@ tests/ # Contiendra les tests unitaires.
 - PostgreSQL comme base de données
 - Pydantic pour la validation des données
 - Uvicorn pour exécuter le serveur
+- HTTPX (TestcClient) pour exécuter les tests.
+- Pytest pour exécuter les tests.
 
 ```bash
 pip install fastapi
 pip install uicorn
 pip install sqlmodel
 pip install pydantic
+pip install httpx
+pip install pytest
 pip freeze > requirements.txt
 ```
 
