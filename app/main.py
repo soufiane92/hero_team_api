@@ -6,6 +6,11 @@ from app.routes.team import team_router
 app = FastAPI()
 
 
+@app.get("/")
+async def read_main():
+    return {"message": "Welcome to the Hero Team API."}
+
+
 @app.on_event("startup")
 def on_startup():
     create_db_and_tables()
