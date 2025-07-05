@@ -15,6 +15,7 @@ Here we would have the update steps for 1.2.4 for people to follow.
  
 ### Added
 
-- Related issue: [hero_team_api-1](https://github.com/soufiane92/hero_team_api/issues/1)
+- Related issue: [hero_team_api-issue1](https://github.com/soufiane92/hero_team_api/issues/1)
+- Related pull request: [hero_team_api-pr2](https://github.com/soufiane92/hero_team_api/pull/2)
 
 Develop branch added for future project developments.
