@@ -3,6 +3,9 @@ site_name: Hero Team API documentation
 site_description: basic description
 site_author: Soufiane CHERKAOUI
 
+nav:
+  - Accueil: index.md
+
 # Repository
 repo_name: hero_team_api
 repo_url: https://github.com/soufiane92/hero_team_api
