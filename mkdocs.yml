@@ -1,0 +1,42 @@
+# Project information
+site_name: Hero Team API documentation
+site_description: basic description
+site_author: Soufiane CHERKAOUI
+
+# Repository
+repo_name: hero_team_api
+repo_url: https://github.com/soufiane92/hero_team_api
+edit_uri: ""
+
+# Configuration
+theme:
+  name: "material"
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.indexes
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+# Extensions
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugin:
+  - search
+  - mkdocstrings
+  - awesome-pages
