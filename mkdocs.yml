@@ -40,9 +40,3 @@ plugins:
   - search
   - mkdocstrings
   - awesome-pages
-
-nav:
-  - Accueil: mkdocs.md
-  - Développement:
-      - Setup: TEAM_SECTION/dev/dev_setup/dev_setup.md
-      - Clonage GitHub: TEAM_SECTION/dev/dev_setup/dev_first_steps/github_repo_cloning.md
