@@ -3,9 +3,6 @@ site_name: Hero Team API documentation
 site_description: basic description
 site_author: Soufiane CHERKAOUI
 
-nav:
-  - Accueil: index.md
-
 # Repository
 repo_name: hero_team_api
 repo_url: https://github.com/soufiane92/hero_team_api
@@ -39,7 +36,13 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
 
-plugin:
+plugins:
   - search
   - mkdocstrings
   - awesome-pages
+
+nav:
+  - Accueil: mkdocs.md
+  - Développement:
+      - Setup: TEAM_SECTION/dev/dev_setup/dev_setup.md
+      - Clonage GitHub: TEAM_SECTION/dev/dev_setup/dev_first_steps/github_repo_cloning.md
