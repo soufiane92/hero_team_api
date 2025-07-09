@@ -1,0 +1,58 @@
+# pyproject.toml
+[tool.pytest.ini_options]
+minversion = "6.0"
+log_cli = true
+log_cli_level = "DEBUG"
+addopts = "-ra -q -v --strict-markers -s --capture=no"
+markers = [
+    "xpass:test expected to pass",
+    "xfail:test expected to fail",
+]
+
+testpaths =  [
+    "./app/tests"
+]
+py_modules = ['./app']
+env_files = [
+    "./ENV/.env"
+]
+[project]
+name = "HERO TEAM API"
+version = "0.0.1dev"
+authors = [
+    { name="Soufiane CHERKAOUI", email="soufiane.cherkaoui1992@gmail.com"}
+]
+description = "Hero Team API"
+readme = "README.md"
+requires-python = "==3.11.*"
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+target-version = "py311"
+exclude = [
+    ".venv",
+    ".git",
+    ".github",
+    "__pycache__",
+    "build",
+    "dist",
+    "venv",
+]
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "B", "I", "N", "W", "UP"
+]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"**/{tests,docs,cicd}/*" = ["E402"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
