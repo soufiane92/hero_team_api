@@ -35,3 +35,48 @@ pip freeze > requirements_full.txt
 
 - Hero: représente les héros.
 - Team: représente les équipes à laquelles appartiennent les héros.
+
+## 🚀 Lancer l'application
+
+### 🧱 Prérequis
+
+- Python 3.11
+- [poetry](https://python-poetry.org/) ou `pip` pour la gestion des dépendances
+- Virtualenv recommandé
+
+---
+
+### ⚙️ Installation
+
+1. Cloner le dépôt :
+
+```bash
+git clone https://github.com/<utilisateur>/hero_team_api.git
+cd hero_team_api
+```
+
+2. Créer et activer un environnement virtuel :
+
+```bash
+# Windows
+python -m venv .venv
+.venv\Scripts\activate
+
+# macOS / Linux
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+3. Installer les dépendances :
+
+```bash
+pip install -r requirements_full.txt
+```
+
+4. ▶️ Lancer le serveur
+
+Depuis la racine du projet (`hero_team_api/`), lance la commande suivante :
+
+```bash
+uvicorn app.main:app --reload
+```
