@@ -2,7 +2,7 @@
 
 ## Structure
 ```bash
-requirements.txt # Liste des dépendances nécessaires.
+requirements_full.txt # Liste des dépendances nécessaires.
 main.py # Point d'entrée de l'application.
 schemas/ # Contiendra les modèles Pydantic pour la validation.
 db/ # Contiendra le fichier de connexion à la base de données.
@@ -28,7 +28,7 @@ pip install sqlmodel
 pip install pydantic
 pip install httpx
 pip install pytest
-pip freeze > requirements.txt
+pip freeze > requirements_full.txt
 ```
 
 ## Deux modèles principaux :
