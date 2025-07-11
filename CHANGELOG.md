@@ -9,9 +9,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 Here we write upgrading notes for brands. It's a team effort to make them as
 straightforward as possible.
  
+## [0.0.2dev] - 2025-07-11
+  
+Implement a logger class so logs are generated across the entire application.
+ 
+### Added
+
+- Related issue: [hero_team_api-issue9](https://github.com/soufiane92/hero_team_api/issues/9)
+- Related pull request: [hero_team_api-pr10](https://github.com/soufiane92/hero_team_api/pull/10)
+
 ## [0.0.1dev] - 2025-07-05
   
-Here we would have the update steps for 1.2.4 for people to follow.
+First develop version.
  
 ### Added
 
