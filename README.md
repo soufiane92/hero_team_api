@@ -80,3 +80,10 @@ Depuis la racine du projet (`hero_team_api/`), lance la commande suivante :
 ```bash
 uvicorn app.main:app --reload
 ```
+
+Une autre alternative consiste à utiliser le script `run_uvicorn.py` qui se trouve dans le 
+répertoire `utils`:
+
+```bash
+python -m app.utils.run_uvicorn
+```
