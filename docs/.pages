@@ -1,5 +1,5 @@
 nav:
   - Home: index.md
-  - TEAM_SECTION
   - PROJECT_ITEMS
+  - TEAM_SECTION
   - How to add documentation: mkdocs.md
