@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+
 from app.db.database import create_db_and_tables
 from app.routes.hero import hero_router
 from app.routes.team import team_router

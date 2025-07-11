@@ -1,6 +1,8 @@
 from typing import Annotated
+
 from fastapi import Query
 from sqlmodel import select
+
 from app.db.database import SessionDep
 from app.schemas.team import (
     Team,

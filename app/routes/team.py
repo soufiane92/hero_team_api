@@ -1,19 +1,20 @@
 from typing import Annotated
-from fastapi import APIRouter, Query, status, HTTPException
+
+from fastapi import APIRouter, HTTPException, Query, status
+
+from app.crud.team import (
+    create_team,
+    delete_team,
+    read_team,
+    read_teams,
+    update_team,
+)
 from app.db.database import SessionDep
 from app.schemas.team import (
     TeamCreate,
     TeamPublic,
     TeamUpdate,
 )
-from app.crud.team import (
-    create_team,
-    read_teams,
-    read_team,
-    update_team,
-    delete_team,
-)
-
 
 team_router = APIRouter(prefix="/teams", tags=["Teams"])
 
