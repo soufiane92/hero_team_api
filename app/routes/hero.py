@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Annotated
 
 from fastapi import APIRouter, HTTPException, Query, status
@@ -15,6 +16,10 @@ from app.schemas.hero import (
     HeroPublic,
     HeroUpdate,
 )
+from app.utils.logger import get_logger
+
+LOGGER_ROOT_NAME = f"::APP::API::ROUTES::{Path(__file__).stem}"
+logger = get_logger(LOGGER_ROOT_NAME)
 
 hero_router = APIRouter(prefix="/heroes", tags=["Heroes"])
 
@@ -43,6 +48,13 @@ def list_all_heroes(
     limit: Annotated[int, Query(le=100)] = 100,
 ):
     db_heroes = read_heroes(db_session, offset, limit)
+    if len(db_heroes) == 0:
+        msg = "Heroes not found"
+        logger.debug(msg)
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=msg,
+        )
     return db_heroes
 
 
@@ -57,9 +69,11 @@ def get_hero_by_id(
 ):
     db_hero = read_hero(db_session, hero_id)
     if not db_hero:
+        msg = f"Hero with ID {hero_id} not found"
+        logger.debug(msg)
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Hero with ID {hero_id} not found",
+            detail=msg,
         )
     return db_hero
 
@@ -76,9 +90,11 @@ def update_existing_hero(
 ):
     db_hero = update_hero(db_session, hero_id, updated_hero)
     if not db_hero:
+        msg = f"Hero with ID {hero_id} not found"
+        logger.debug(msg)
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Hero with ID {hero_id} not found",
+            detail=msg,
         )
     return db_hero
 
@@ -93,8 +109,10 @@ def delete_existing_hero(
 ) -> dict:
     message = delete_hero(db_session, hero_id)
     if not message:
+        msg = f"Hero with ID {hero_id} not found"
+        logger.debug(msg)
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Hero with ID {hero_id} not found",
+            detail=msg,
         )
     return message

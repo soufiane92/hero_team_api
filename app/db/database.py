@@ -1,6 +1,13 @@
-from fastapi import Depends
-from sqlmodel import Session, create_engine, SQLModel
+from pathlib import Path
 from typing import Annotated
+
+from fastapi import Depends
+from sqlmodel import Session, SQLModel, create_engine
+
+from app.utils.logger import get_logger
+
+LOGGER_ROOT_NAME = f"::APP::DB::{Path(__file__).stem}"
+logger = get_logger(LOGGER_ROOT_NAME)
 
 sqlite_file_name = "database.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
@@ -11,14 +18,12 @@ engine = create_engine(sqlite_url, connect_args=connect_args)
 
 def create_db_and_tables():
     try:
-        print("Creating tables...")
-        from app.schemas.hero import Hero
-        from app.schemas.team import Team
+        logger.info("Creating tables...")
 
         SQLModel.metadata.create_all(engine)
-        print("Tables created successfully!")
+        logger.info("Tables created successfully.")
     except Exception as e:
-        print(f"Error initializing database: {e}")
+        logger.exception(f"Error initializing database: {e}")
 
 
 def get_session():
