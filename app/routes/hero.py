@@ -1,17 +1,19 @@
 from typing import Annotated
-from fastapi import APIRouter, Query, status, HTTPException
+
+from fastapi import APIRouter, HTTPException, Query, status
+
+from app.crud.hero import (
+    create_hero,
+    delete_hero,
+    read_hero,
+    read_heroes,
+    update_hero,
+)
 from app.db.database import SessionDep
 from app.schemas.hero import (
     HeroCreate,
     HeroPublic,
     HeroUpdate,
-)
-from app.crud.hero import (
-    create_hero,
-    read_heroes,
-    read_hero,
-    update_hero,
-    delete_hero,
 )
 
 hero_router = APIRouter(prefix="/heroes", tags=["Heroes"])
